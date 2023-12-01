@@ -29,7 +29,18 @@
                 <div class="container">
                     <h1>Todo List</h1>
                     <ul>
-                        <li v-for="(task,index) in todoList" :key="index">{{task.text}}</li>
+                        <li class="d-flex justify-content-between" v-for="(task,index) in todoList" :key="index">
+                            <div :class="{'delete':task.done}" class="clickable" @click="toggleDoneTask(index)">{{task.text}}</div>
+                            <div >
+                                <div v-if="task.done === false">
+                                    <i @click="toggleDoneTask(index)" class="clickable fa-solid fa-xmark"></i>
+                                </div>
+                                <div v-else>
+                                    <i @click="toggleDoneTask(index)" class="clickable fa-solid fa-repeat"></i>
+                                    <i @click="deleteTask(index)" class="clickable text-danger fa-solid fa-trash"></i>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </div>
             </section>

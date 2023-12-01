@@ -1,0 +1,7 @@
+/* UTILITY */
+.clickable{
+    cursor: pointer;
+}
+.delete{
+    text-decoration: line-through;
+}
