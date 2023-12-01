@@ -23,7 +23,26 @@
 </head>
 
 <body>
-    <div id="app"></div>
+<div class="wrapper">
+        <div id="app">
+            <section>
+                <div class="container">
+                    <h1>Todo List</h1>
+                    <ul>
+                        <li v-for="(task,index) in todoList" :key="index">{{task.text}}</li>
+                    </ul>
+                </div>
+            </section>
+            <section>
+                <div class="container">
+                    <div class="input-group mb-3">
+                        <input type="text" class="form-control" v-model="newTask">
+                        <button class="btn btn-primary" type="button" @click="addTask">Inserisci</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
 </body>
 
 </html>
